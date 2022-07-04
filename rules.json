@@ -1,0 +1,30 @@
+{
+    "rules": [
+        {
+            "name": "Rule 1",
+            "condition": "all",
+            "filters": [
+                {
+                    "field": "From",
+                    "logic": "contains",
+                    "value": "bhav"
+                },
+                {
+                    "field": "Subject",
+                    "logic": "contains",
+                    "value": "Test"
+                },
+                {
+                    "field": "To",
+                    "logic": "contains",
+                    "value": "anand"
+                }
+            ],
+            "action": {
+                "name": "Move Message",
+                "destination": "SPAM",
+                "apply": ["Mark as unread"]
+            }
+        }
+    ]
+}
