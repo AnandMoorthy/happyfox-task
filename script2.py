@@ -33,7 +33,10 @@ def process_email():
     return
 
 def actions(email_ids, rule):
-    #Iterating through rules to get the actions
+    """
+    This is an helper function to run the actions
+    specified in the rules.json
+    """
     rule_name = rule.get('name')
     print('Deploying Action for Rule: ', rule_name)
     action = rule.get('action')
@@ -41,6 +44,7 @@ def actions(email_ids, rule):
     apply = action.get('apply')
     addLabelIds = []
     RemoveLabelIds = []
+    # looping through apply to decide on the action
     for task in apply:
         if task == 'Mark as unread':
             RemoveLabelIds.append('UNREAD')
